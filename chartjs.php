@@ -10,14 +10,27 @@ google.charts.setOnLoadCallback(drawBasic);
 
 function drawBasic() {
 
-  var data = google.visualization.arrayToDataTable([
+  /*var data = google.visualization.arrayToDataTable([
          ['Year', 'Valor ISS', { role: 'style' }, { role: 'annotation' } ],
          ['2017', 432987, '#3367D6', 'R$ 432.987,00' ],
          ['2018', 53213, '#3367D6', 'R$ 53.213,00' ],
          ['2019', 128549, '#3367D6', 'R$ 128.549,00' ],
          ['2020', 230000, '#3367D6', 'R$ 230.000,00' ]
       ]);
-  
+  */
+  var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Year');
+    data.addColumn('number', 'Valor ISS');
+    data.addColumn({type:'string', role:'annotation'}); // annotation role col.
+    data.addRows([
+      ['2014',34230, 'R$ 34.230,00'],
+      ['2015',28743, 'R$ 28.743,00'],
+      ['2016',3498, 'R$ 3498,00'],
+      ['2017',7652, 'R$ 7652,00'],
+      ['2018',32000, 'R$ 32.000,00'],
+      ['2019',13432, 'R$ 13.432,00'],
+      ['2020',159945, 'R$ 159.945,00']
+    ]);
       var options = {
         title: 'Total ISS Rio do Sul',
         hAxis: {
@@ -26,8 +39,10 @@ function drawBasic() {
         vAxis: {
           title: 'Valor ISS'
         },
-        width: 1000,
-        bar: {groupWidth: "90%"}
+        is3D:true,
+        width:1000,
+        height:300,
+        bar: {groupWidth: "95%"}
       };
     
 
