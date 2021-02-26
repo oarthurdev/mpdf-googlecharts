@@ -1,0 +1,6 @@
+{
+    "require": {
+        "mpdf/mpdf": "^8.0",
+        "wp-statistics/pchart": "^1.2"
+    }
+}
