@@ -27,8 +27,7 @@ function drawBasic() {
           title: 'Valor ISS'
         },
         width: 1000,
-        bar: {groupWidth: "95%"},
-        legend: { position: "none" }
+        bar: {groupWidth: "90%"}
       };
     
 
